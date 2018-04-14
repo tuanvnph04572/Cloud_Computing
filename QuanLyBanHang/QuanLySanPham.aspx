@@ -2,11 +2,12 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<form id="form1" runat="server">
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nhóm 8 &copy; <%: DateTime.Now.Year %></title>
+	<title>Quản lý sản phẩm</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -120,7 +121,41 @@
 			</div>
 			
 			
-			
+			<div class="fh5co-narrow-content">
+                <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="ProductId" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="#CCCCCC" />
+                    <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <Fields>
+                        <asp:BoundField DataField="ProductId" HeaderText="ProductId" InsertVisible="False" ReadOnly="True" SortExpression="ProductId" />
+                        <asp:BoundField DataField="CateId" HeaderText="CateId" SortExpression="CateId" />
+                        <asp:BoundField DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName" />
+                        <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                    </Fields>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                </asp:DetailsView>
+			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Products] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO [Products] ([CateId], [ProductName], [Quantity], [Price]) VALUES (@CateId, @ProductName, @Quantity, @Price)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [ProductId], [CateId], [ProductName], [Quantity], [Price] FROM [Products]" UpdateCommand="UPDATE [Products] SET [CateId] = @CateId, [ProductName] = @ProductName, [Quantity] = @Quantity, [Price] = @Price WHERE [ProductId] = @ProductId">
+                    <DeleteParameters>
+                        <asp:Parameter Name="ProductId" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="ProductName" Type="String" />
+                        <asp:Parameter Name="Quantity" Type="Int32" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="ProductName" Type="String" />
+                        <asp:Parameter Name="Quantity" Type="Int32" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
+                        <asp:Parameter Name="ProductId" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+			</div>
 
 
 			<div class="fh5co-narrow-content">
@@ -228,4 +263,7 @@
 
 	</body>
 </html>
+
+</form>
+
 
