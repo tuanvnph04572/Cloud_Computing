@@ -74,7 +74,7 @@
 				<ul>
 					<li class="fh5co-active"><a href="Default.aspx">Trang chủ</a></li>
 					<li><a href="QuanLySanPham.aspx">Quản lý sản phẩm</a></li>
-					<li><a href="Manage.aspx">Quản lý</a></li>
+					<li><a href="QuanLyhoadon.aspx">Quản lý hóa đơn</a></li>
 					<li><a href="Contact.aspx">Liên hệ</a></li>
 				</ul>
 			</nav>

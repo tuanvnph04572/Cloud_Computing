@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Group 6 - INF205</title>
+	<title>Nhóm 8 &copy; <%: DateTime.Now.Year %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -80,7 +80,7 @@
 			</nav>
 
 			<div class="fh5co-footer">
-				<p><small>&copy; FPT Polytechnic - 2017</span> <span>Designed by Group 6 - INF205 </span> </small></p>
+				<p><small>&copy; Nhóm 8 - <%: DateTime.Now.Year %></span> <span>Cloud Computing</span> </small></p>
 				<ul>
 					<li><a href="https://www.facebook.com/"><i class="icon-facebook"></i></a></li>
 					<li><a href="https://twitter.com/?lang=vi"><i class="icon-twitter"></i></a></li>
@@ -121,30 +121,42 @@
 			</div>
 			
 			
-			
+			<div class="fh5co-narrow-content">
+                <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="BillId" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="#CCCCCC" />
+                    <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <Fields>
+                        <asp:BoundField DataField="BillId" HeaderText="BillId" InsertVisible="False" ReadOnly="True" SortExpression="BillId" />
+                        <asp:BoundField DataField="CusId" HeaderText="CusId" SortExpression="CusId" />
+                        <asp:BoundField DataField="ShipAddress" HeaderText="ShipAddress" SortExpression="ShipAddress" />
+                        <asp:BoundField DataField="TotalPrice" HeaderText="TotalPrice" SortExpression="TotalPrice" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                    </Fields>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                </asp:DetailsView>
+			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Bills] WHERE [BillId] = @BillId" InsertCommand="INSERT INTO [Bills] ([CusId], [ShipAddress], [TotalPrice]) VALUES (@CusId, @ShipAddress, @TotalPrice)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [BillId], [CusId], [ShipAddress], [TotalPrice] FROM [Bills]" UpdateCommand="UPDATE [Bills] SET [CusId] = @CusId, [ShipAddress] = @ShipAddress, [TotalPrice] = @TotalPrice WHERE [BillId] = @BillId">
+                    <DeleteParameters>
+                        <asp:Parameter Name="BillId" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="CusId" Type="Int32" />
+                        <asp:Parameter Name="ShipAddress" Type="String" />
+                        <asp:Parameter Name="TotalPrice" Type="Decimal" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="CusId" Type="Int32" />
+                        <asp:Parameter Name="ShipAddress" Type="String" />
+                        <asp:Parameter Name="TotalPrice" Type="Decimal" />
+                        <asp:Parameter Name="BillId" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+			</div>
 
 
 			<div class="fh5co-narrow-content">
 				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Đây là những điều chúng tôi thích làm</span></h2>
-<asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="CateId" DataSourceID="SqlDataSource1">
-    <Fields>
-        <asp:BoundField DataField="CateId" HeaderText="CateId" InsertVisible="False" ReadOnly="True" SortExpression="CateId" />
-        <asp:BoundField DataField="CateName" HeaderText="CateName" SortExpression="CateName" />
-        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-    </Fields>
-                </asp:DetailsView>
-				<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Categories] WHERE [CateId] = @CateId" InsertCommand="INSERT INTO [Categories] ([CateName]) VALUES (@CateName)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CateId], [CateName] FROM [Categories]" UpdateCommand="UPDATE [Categories] SET [CateName] = @CateName WHERE [CateId] = @CateId">
-                    <DeleteParameters>
-                        <asp:Parameter Name="CateId" Type="Int32" />
-                    </DeleteParameters>
-                    <InsertParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
-                    </InsertParameters>
-                    <UpdateParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
-                        <asp:Parameter Name="CateId" Type="Int32" />
-                    </UpdateParameters>
-                </asp:SqlDataSource>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
