@@ -69,12 +69,15 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="Default.aspx"><img src="images/logo.png" alt="Free HTML5 Bootstrap Website Template"></a></h1>
+			<h1 id="fh5co-logo"><a href="Default.aspx"><asp:Image ID="Image1" ImageUrl="~/Images/logo.png" Width="100px" runat="server" /></a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li class="fh5co-active"><a href="Default.aspx">Trang chủ</a></li>
+					<li><a href="Default.aspx">Trang chủ</a></li>
+					<li><a href="QuanLyLoaiSanPham.aspx">Quản lý loại sản phẩm</a></li>
 					<li><a href="QuanLySanPham.aspx">Quản lý sản phẩm</a></li>
+					<li  class="fh5co-active"><a href="QuanLyKhachHang.aspx">Quản lý khách hàng</a></li>
 					<li><a href="QuanLyhoadon.aspx">Quản lý hóa đơn</a></li>
+					<li><a href="ChiTietHoaDon.aspx">Quản lý chi tiết hóa đơn</a></li>
 					<li><a href="Contact.aspx">Liên hệ</a></li>
 				</ul>
 			</nav>

@@ -69,16 +69,16 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="Default.aspx"><asp:Image ID="Image1" ImageUrl="~/Images/logo.png" Width="100px" runat="server" /></a></h1>
+			<h1 id="fh5co-logo"><a href="Default.aspx"><asp:Image ImageUrl="~/Images/logo.png" Width="100px" runat="server" /></a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li class="fh5co-active"><a href="Default.aspx">Trang chủ</a></li>
+					<li><a href="Default.aspx">Trang chủ</a></li>
 					<li><a href="QuanLyLoaiSanPham.aspx">Quản lý loại sản phẩm</a></li>
 					<li><a href="QuanLySanPham.aspx">Quản lý sản phẩm</a></li>
 					<li><a href="QuanLyKhachHang.aspx">Quản lý khách hàng</a></li>
 					<li><a href="QuanLyhoadon.aspx">Quản lý hóa đơn</a></li>
 					<li><a href="ChiTietHoaDon.aspx">Quản lý chi tiết hóa đơn</a></li>
-					<li><a href="Contact.aspx">Liên hệ</a></li>
+					<li class="fh5co-active"><a href="Contact.aspx">Liên hệ</a></li>
 				</ul>
 			</nav>
 
@@ -100,27 +100,9 @@
 
 
 			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Sản phẩm</h2>
+				<h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Chỉ đường</h2>
 				<div class="row">
-                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" Width="100%">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:BoundField DataField="ProductName" HeaderText="Tên sản phẩm" SortExpression="ProductName" />
-                            <asp:BoundField DataField="Price" HeaderText="Giá" SortExpression="Price" />
-                            <asp:BoundField DataField="Quantity" HeaderText="Số lượng" SortExpression="Quantity" />
-                        </Columns>
-                        <FooterStyle BackColor="#CCCC99" />
-                        <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-                        <RowStyle BackColor="#F7F7DE" />
-                        <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#FBFBF2" />
-                        <SortedAscendingHeaderStyle BackColor="#848384" />
-                        <SortedDescendingCellStyle BackColor="#EAEAD3" />
-                        <SortedDescendingHeaderStyle BackColor="#575357" />
-                    </asp:GridView>
-					<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT  [ProductName], [Price], [Quantity] FROM [Products]"></asp:SqlDataSource>
-
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.9248737205567!2d105.76281741490479!3d21.035691785994548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454bc756b5f4b%3A0xf6b89b17769714f3!2zVHLGsOG7nW5nIENhbyDEkOG6s25nIFRo4buxYyBIw6BuaCBGUFQgUG9seXRlY2huaWMgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1523695440899" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 			</div>
 

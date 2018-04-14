@@ -69,12 +69,15 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="Default.aspx"><img src="images/logo.png" alt="Free HTML5 Bootstrap Website Template"></a></h1>
+			<h1 id="fh5co-logo"><a href="Default.aspx"><asp:Image ID="Image1" ImageUrl="~/Images/logo.png" Width="100px" runat="server" /></a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li class="fh5co-active"><a href="Default.aspx">Trang chủ</a></li>
+					<li><a href="Default.aspx">Trang chủ</a></li>
+					<li><a href="QuanLyLoaiSanPham.aspx">Quản lý loại sản phẩm</a></li>
 					<li><a href="QuanLySanPham.aspx">Quản lý sản phẩm</a></li>
+					<li><a href="QuanLyKhachHang.aspx">Quản lý khách hàng</a></li>
 					<li><a href="QuanLyhoadon.aspx">Quản lý hóa đơn</a></li>
+					<li  class="fh5co-active"><a href="ChiTietHoaDon.aspx">Quản lý chi tiết hóa đơn</a></li>
 					<li><a href="Contact.aspx">Liên hệ</a></li>
 				</ul>
 			</nav>
@@ -122,24 +125,37 @@
 			
 			
 			<div class="fh5co-narrow-content">
-<asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="DetailsId" DataSourceID="SqlDataSource1">
-    <Fields>
-        <asp:BoundField DataField="DetailsId" HeaderText="DetailsId" InsertVisible="False" ReadOnly="True" SortExpression="DetailsId" />
-        <asp:BoundField DataField="BillId" HeaderText="BillId" SortExpression="BillId" />
-        <asp:BoundField DataField="ProductId" HeaderText="ProductId" SortExpression="ProductId" />
-        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-    </Fields>
+                <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="DetailsId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
+                    <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
+                    <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+                    <Fields>
+                        <asp:BoundField DataField="DetailsId" HeaderText="Mã chi tiết" InsertVisible="False" ReadOnly="True" SortExpression="DetailsId" />
+                        <asp:BoundField DataField="BillId" HeaderText="Mã hóa đơn" SortExpression="BillId" />
+                        <asp:BoundField DataField="ProductId" HeaderText="Mã sản phẩm" SortExpression="ProductId" />
+                        <asp:BoundField DataField="Quantity" HeaderText="Số lượng" SortExpression="Quantity" />
+                        <asp:BoundField DataField="Price" HeaderText="Giá" SortExpression="Price" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                    </Fields>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
                 </asp:DetailsView>
-			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [BillDetails] WHERE [DetailsId] = @DetailsId" InsertCommand="INSERT INTO [BillDetails] ([BillId], [ProductId]) VALUES (@BillId, @ProductId)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [DetailsId], [BillId], [ProductId] FROM [BillDetails]" UpdateCommand="UPDATE [BillDetails] SET [BillId] = @BillId, [ProductId] = @ProductId WHERE [DetailsId] = @DetailsId">
+			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [BillDetails] WHERE [DetailsId] = @DetailsId" InsertCommand="INSERT INTO [BillDetails] ([BillId], [Quantity], [Price], [ProductId]) VALUES (@BillId, @Quantity, @Price, @ProductId)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [BillId], [Quantity], [Price], [ProductId], [DetailsId] FROM [BillDetails]" UpdateCommand="UPDATE [BillDetails] SET [BillId] = @BillId, [Quantity] = @Quantity, [Price] = @Price, [ProductId] = @ProductId WHERE [DetailsId] = @DetailsId">
                     <DeleteParameters>
                         <asp:Parameter Name="DetailsId" Type="Int32" />
                     </DeleteParameters>
                     <InsertParameters>
                         <asp:Parameter Name="BillId" Type="Int32" />
+                        <asp:Parameter Name="Quantity" Type="Int32" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
                         <asp:Parameter Name="ProductId" Type="Int32" />
                     </InsertParameters>
                     <UpdateParameters>
                         <asp:Parameter Name="BillId" Type="Int32" />
+                        <asp:Parameter Name="Quantity" Type="Int32" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
                         <asp:Parameter Name="ProductId" Type="Int32" />
                         <asp:Parameter Name="DetailsId" Type="Int32" />
                     </UpdateParameters>
