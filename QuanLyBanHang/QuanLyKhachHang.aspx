@@ -118,38 +118,47 @@
 					<div class="clearfix visible-md-block"></div>
 					
 				</div>
-                
 			</div>
+			
 			<div class="fh5co-narrow-content">
-<asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="CateId" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="#333333">
-    <AlternatingRowStyle BackColor="White" />
-    <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
-    <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
-    <Fields>
-        <asp:BoundField DataField="CateId" HeaderText="CateId" InsertVisible="False" ReadOnly="True" SortExpression="CateId" />
-        <asp:BoundField DataField="CateName" HeaderText="CateName" SortExpression="CateName" />
-        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-    </Fields>
-    <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
-    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+
+                <asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="CusId" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
+                    <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
+                    <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+                    <Fields>
+                        <asp:BoundField DataField="CusId" HeaderText="Mã khách hàng" InsertVisible="False" ReadOnly="True" SortExpression="CusId" />
+                        <asp:BoundField DataField="Name" HeaderText="Tên khách hàng" SortExpression="Name" />
+                        <asp:BoundField DataField="Sex" HeaderText="Giới tính" SortExpression="Sex" />
+                        <asp:BoundField DataField="Address" HeaderText="Địa chỉ" SortExpression="Address" />
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                    </Fields>
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
                 </asp:DetailsView>
-			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Categories] WHERE [CateId] = @CateId" InsertCommand="INSERT INTO [Categories] ([CateName]) VALUES (@CateName)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CateId], [CateName] FROM [Categories]" UpdateCommand="UPDATE [Categories] SET [CateName] = @CateName WHERE [CateId] = @CateId">
+
+			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Customers] WHERE [CusId] = @CusId" InsertCommand="INSERT INTO [Customers] ([Name], [Sex], [Address]) VALUES (@Name, @Sex, @Address)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CusId], [Name], [Sex], [Address] FROM [Customers]" UpdateCommand="UPDATE [Customers] SET [Name] = @Name, [Sex] = @Sex, [Address] = @Address WHERE [CusId] = @CusId">
                     <DeleteParameters>
-                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="CusId" Type="Int32" />
                     </DeleteParameters>
                     <InsertParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
+                        <asp:Parameter Name="Name" Type="String" />
+                        <asp:Parameter Name="Sex" Type="String" />
+                        <asp:Parameter Name="Address" Type="String" />
                     </InsertParameters>
                     <UpdateParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
-                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="Name" Type="String" />
+                        <asp:Parameter Name="Sex" Type="String" />
+                        <asp:Parameter Name="Address" Type="String" />
+                        <asp:Parameter Name="CusId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
+
+
+
 			</div>
-			
-			
 			
 
 

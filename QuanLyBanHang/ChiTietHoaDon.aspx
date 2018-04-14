@@ -118,39 +118,34 @@
 					<div class="clearfix visible-md-block"></div>
 					
 				</div>
-                
 			</div>
+			
+			
 			<div class="fh5co-narrow-content">
-<asp:DetailsView ID="DetailsView1" runat="server" Width="100%" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="CateId" DataSourceID="SqlDataSource1" GridLines="None" ForeColor="#333333">
-    <AlternatingRowStyle BackColor="White" />
-    <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
-    <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />
+<asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="DetailsId" DataSourceID="SqlDataSource1">
     <Fields>
-        <asp:BoundField DataField="CateId" HeaderText="CateId" InsertVisible="False" ReadOnly="True" SortExpression="CateId" />
-        <asp:BoundField DataField="CateName" HeaderText="CateName" SortExpression="CateName" />
+        <asp:BoundField DataField="DetailsId" HeaderText="DetailsId" InsertVisible="False" ReadOnly="True" SortExpression="DetailsId" />
+        <asp:BoundField DataField="BillId" HeaderText="BillId" SortExpression="BillId" />
+        <asp:BoundField DataField="ProductId" HeaderText="ProductId" SortExpression="ProductId" />
         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
     </Fields>
-    <FooterStyle BackColor="#990000" ForeColor="White" Font-Bold="True" />
-    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-    <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
                 </asp:DetailsView>
-			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [Categories] WHERE [CateId] = @CateId" InsertCommand="INSERT INTO [Categories] ([CateName]) VALUES (@CateName)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [CateId], [CateName] FROM [Categories]" UpdateCommand="UPDATE [Categories] SET [CateName] = @CateName WHERE [CateId] = @CateId">
+			    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\QLBH.mdf;Integrated Security=True" DeleteCommand="DELETE FROM [BillDetails] WHERE [DetailsId] = @DetailsId" InsertCommand="INSERT INTO [BillDetails] ([BillId], [ProductId]) VALUES (@BillId, @ProductId)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [DetailsId], [BillId], [ProductId] FROM [BillDetails]" UpdateCommand="UPDATE [BillDetails] SET [BillId] = @BillId, [ProductId] = @ProductId WHERE [DetailsId] = @DetailsId">
                     <DeleteParameters>
-                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="DetailsId" Type="Int32" />
                     </DeleteParameters>
                     <InsertParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
+                        <asp:Parameter Name="BillId" Type="Int32" />
+                        <asp:Parameter Name="ProductId" Type="Int32" />
                     </InsertParameters>
                     <UpdateParameters>
-                        <asp:Parameter Name="CateName" Type="String" />
-                        <asp:Parameter Name="CateId" Type="Int32" />
+                        <asp:Parameter Name="BillId" Type="Int32" />
+                        <asp:Parameter Name="ProductId" Type="Int32" />
+                        <asp:Parameter Name="DetailsId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
 			</div>
-			
-			
-			
+            
 
 
 			<div class="fh5co-narrow-content">
@@ -235,7 +230,7 @@
 		
 
 			</div>
-	</div>
+	</div>s
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
