@@ -3,7 +3,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDe" runat="Server">
-    Những dòng sản phẩm mà chúng tôi có
+    Những dòng sản phẩm mà chúng tôi có commit
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="NoiDung" runat="Server">
     <div id="slide" style="width: 100%;color: #000000 ">
