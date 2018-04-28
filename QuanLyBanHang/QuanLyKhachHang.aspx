@@ -3,11 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Style" Runat="Server">
     <style>
         h2 {
-            color:red;
+            color:green;
         }
 
         td {
-            color:red;
+            color:green;
+        }
+        a {
+            color:green;
         }
         
     </style>
