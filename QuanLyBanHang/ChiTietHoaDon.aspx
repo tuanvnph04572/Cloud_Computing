@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Chi tiết hóa đơn" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ChiTietHoaDon.aspx.cs" Inherits="ChiTietHoaDon" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Style" Runat="Server">
+    <style>
+        h2, table {
+            color: red !important;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDe" Runat="Server">
     Quản lý chi tiết hóa đơn
