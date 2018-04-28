@@ -1,6 +1,22 @@
 ﻿<%@ Page Title="Quản lý hóa đơn" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="QuanLyHoaDon.aspx.cs" Inherits="QuanLyHoaDon" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Style" Runat="Server">
+    <style>
+        body {
+            background-color: green;
+        }
+        table {
+            background-color:white;
+        }
+
+        td {
+            color:yellow;
+        }
+
+        a {
+            color: yellow;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDe" Runat="Server">
     Quản lý hóa đơn
