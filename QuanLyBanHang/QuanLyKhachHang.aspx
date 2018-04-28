@@ -1,8 +1,19 @@
 ﻿<%@ Page Title="Quản lý khách hàng" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="QuanLyKhachHang.aspx.cs" Inherits="QuanLyKhachHang" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Style" Runat="Server">
+    <style>
+        h2 {
+            color:red;
+        }
+
+        td {
+            color:red;
+        }
+        
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDe" Runat="Server">
+    
     Quản lý khách hàng
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="NoiDung" Runat="Server">
