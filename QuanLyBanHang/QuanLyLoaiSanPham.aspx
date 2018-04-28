@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="Quản lý loại sản phẩm" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="QuanLyLoaiSanPham.aspx.cs" Inherits="QuanLyLoaiSanPham" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Style" runat="Server">
+    <style>h2{
+color: violet;
+}</style>
+        <style>a{
+color: violet;
+}</style>
+        <style>td{
+color: violet;
+}</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TieuDe" runat="Server">
     Quản lý loại sản phẩm
